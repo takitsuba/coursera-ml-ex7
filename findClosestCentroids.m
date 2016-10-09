@@ -23,12 +23,17 @@ idx = zeros(size(X,1), 1);
 
 distance = zeros(1,K);
 
+% xの数だけ繰り返す
 for i = 1:size(X,1)
+  % x1つについて、K個のcentroidとの距離を計る
   for j = 1:K
     distance(1,j) = sum((X(i,:) - centroids(j,:)) .^ 2 );
   end
 
+  % x1つについて、centroidのうち距離が最も小さかったものの番号を取り出す。
   [m,im] = min(distance);
+
+  % あるxに最も近いcentroidはなんだったのかを記載
   idx(i,1) = im;
 
 end

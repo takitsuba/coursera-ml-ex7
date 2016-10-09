@@ -22,10 +22,11 @@ size(U);
 size(X);
 K;
 
-
+# the top K components in U
 U_reduce = U(:,1:K);
 
-Z = X * U_reduce
+
+Z = X * U_reduce;
 
 
 % =============================================================
